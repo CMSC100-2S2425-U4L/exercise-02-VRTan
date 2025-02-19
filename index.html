@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 285vh;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+        .navigationBar {
+            height: 10%;
+            width: 100%;
+            background-color: #474973;
+            border-radius: 0px 0px 6px 6px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px); /* Adds blur effect */
+            z-index: 1000;
+        }
+
+        /* Navigation Menu */
+        .navMenu {
+            display: flex;
+            gap: 30px; /* Adds space between links */
+            list-style: none;
+            padding: 0;
+            padding-left: 55%;
+        }
+
+        .navMenu li {
+            display: inline;
+        }
+
+        .navMenu a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: 0.3s;
+            font-family: "Archivo Black", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* Hover Effect */
+        .navMenu a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Light glow effect */
+        }
+
+        /* Main Body */
+        .mainBody {
+            height: 95vh;
+            width: 100%;
+            background-color: #f1dac4;
+            padding-top: 80px; /* Prevents content from being hidden behind the navbar */
+            text-align: center;
+            
+        }
+
+        .skills{
+            height: 95vh;
+            width: 100%;
+            background-color: #a69cac;
+
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center; /* Centers image horizontally */
+            align-items: center; /* Centers everything vertically */
+            max-height: 95vh; /* Adjust as needed */
+        }
+
+        .oble {
+            width: 640px; /* Adjust size */
+            height: 840px;
+            max-height: 95vh;
+        }
+
+        .openingWelcome {
+            position: absolute;
+            top: 2%; /* Moves it near the top */
+            left: 50%; /* Centers it horizontally */
+            transform: translateX(-50%); /* Ensures true centering */
+            font-size: 100px; /* Increase font size */
+            color: black;
+            max-width: 800px; /* Expands text width */
+            font-family: "Jersey 10", serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            letter-spacing: 8px;
+        }
+
+        .description{
+            position: absolute;
+            margin-top: 25%;
+            right: 5%; /* Moves text to the left */
+            font-size: 60px;
+            color: black;
+            max-width: 300px; /* Keeps text readable */
+            font-family: "Jersey 10", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .info{
+            position: absolute;
+            font-size: 18px;
+            margin-top: 31%;
+            left: 5%; /* Moves text to the left */
+            color: #474973;
+            max-width: 600px; /* Keeps text readable */
+            font-family: "Archivo Black", serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: left;
+        }
+
+        .highlight {
+            color: #a69cac; /* Choose any color you like */
+        }
+
+        
+        .interests {
+            position: absolute;
+            font-size: 18px;
+            margin-top: 31%;
+            right: 5%;
+            color: #474973;
+            max-width: 600px;
+            font-family: "Archivo Black", serif;
+            font-weight: 400;
+            text-align: right; /* Align text to the right */
+        }
+
+        .who{
+            position: absolute;
+            margin-top: 25%;
+            left: 5%; /* Moves text to the left */
+            font-size: 60px;
+            color: black;
+            max-width: 300px; /* Keeps text readable */
+            font-family: "Jersey 10", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        .mainPic {
+            height: 100%;
+            width: 70%;
+            margin-top: 0;
+        }
+
+        .projectContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+            flex-wrap: wrap; /* Ensures responsiveness */
+        }
+
+        .projectCard {
+            width: 250px;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            font-family: "Archivo Black", serif;
+            font-size: 18px;
+            color: #474973;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .projectCard:hover {
+            transform: scale(1.05);
+        }
+
+        .projectTitle {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .projectDescription {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .project{
+            font-size: 80px;
+            color: white;
+            font-family: "Jersey 10", serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            letter-spacing: 8px;
+            margin: 0; /* Removes extra spacing */
+            padding-top: 50px; /* Adjust as needed */
+        }
+
+        .highlights{
+            color: #474973;
+        }
+
+        .skillsContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 50px;
+            margin-top: 10px;
+        }
+
+        .skillCircle {
+            width: 100px;
+            height: 100px;
+            background-color: #474973;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Jersey 10", serif;
+            font-size: 18px;
+            color: white;
+            text-align: center;
+        }
+
+        .autobiography {
+            height: 95vh;
+            width: 93.2%;
+            background-color: #f1dac4;
+            padding: 50px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .autobiographyTitle {
+            font-size: 80px;
+            color: #474973;
+            font-family: "Jersey 10", serif;
+            font-weight: 400;
+            text-align: center;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .autoContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .autoText {
+            max-width: 600px;
+            text-align: left;
+            font-size: 18px;
+            color: #474973;
+            font-family: "Archivo Black", serif;
+            line-height: 1.5;
+        }
+
+        .autoImage {
+            width: 300px; /* Adjust image size */
+            height: auto;
+            border-radius: 20px; /* Optional for rounded edges */
+        }
+
+        .navLogo {
+            width: 50px; /* Adjust the width as needed */
+            height: auto;
+            margin-right: 20px; /* Adjust spacing between logo and menu */
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navigationBar">
+        <img src="bearRemoved.png" alt="Logo" class="navLogo">
+        <ul class="navMenu">
+            <li><a href="#refHome">HOME</a></li>
+            <li><a href="#refSkills">SKILLS</a></li>
+            <li><a href="#refAuto">AUTOBIOGRAPHY</a></li>
+        </ul>
+    </div>
+
+    <div class="mainBody" id="refHome">
+        <div class="container">
+            <h1 class="openingWelcome">HALLU! I'm <span class="highlight">TAN!</span></h1>
+            <h1 class="who"> Who Am <span class="highlight"> I: </span></h1>
+            <h2 class="info"> An Isko <br> BSCS Student <br> Volleyball Player</h2>
+            <h1 class="description"> MY <span class="highlight">INTERESTS:</span> </h1>
+            <h2 class="interests"> Front End Programming<br> Machine Learning <br> Artificial Intelligence </h2>
+            <img src="oble.png" class="oble">
+        </div>        
+    </div>
+
+    <div class="skills" id="refSkills">
+        <h1 class="project"> Recent <span class="highlights"> Projects: </span> </h1>
+        <div class="projectContainer">
+            <div class="projectCard">
+                <div class="projectTitle">Speed Typing Game</div>
+                <div class="projectDescription">With the use of Python, we were tasked to create a speed typing game using the basics covered by the course.</div>
+            </div>
+            <div class="projectCard">
+                <div class="projectTitle">Aviation Library System</div>
+                <div class="projectDescription">With the use of C programming, we were tasked to create a Library System where user can interact like reserve a flight, and book them in the system.</div>
+            </div>
+            <div class="projectCard">
+                <div class="projectTitle">Nutronal Diet Optimizer</div>
+                <div class="projectDescription">Using R Programming, with HTML and CSS, we were tasked to create an interface for the user to use. We created a website that would optimize the best diet plan given all the nutritional values.</div>
+            </div>
+            <div class="projectCard">
+                <div class="projectTitle">Delivery Game</div>
+                <div class="projectDescription">Using Java, we were tasked to create a simple multiplayer game about delivery. A given set of time is given for both players and mini task and disasters are set to make the game thrilling and challenging.</div>
+            </div>
+        <h1 class="project"> My <span class = "highlights">Skills: </span></h1>
+
+        <div class="skillsContainer">
+            <div class="skillCircle">Java</div>
+            <div class="skillCircle">R</div>
+            <div class="skillCircle">Python</div>
+            <div class="skillCircle">C</div>
+        </div>        
+        </div>
+
+        <div class="autobiography" id="refAuto">
+            <h1 class="autobiographyTitle">My <span class="highlights">Autobiography</span></h1>
+            <div class="autoContainer">
+                <div class="autoText">
+                    <p>Hello! My name is <span class="highlight">Tan</span>, a passionate BSCS student with a love for technology and problem-solving.  
+                    From an early age, I have been fascinated by computers and their limitless possibilities. My journey into programming began with simple scripts,  
+                    and it has now evolved into taking interest at <span class="highlight">machine learning</span>, <span class="highlight">artificial intelligence</span>, and <span class="highlight">front-end development</span>.</p>
+        
+                    <p>Beyond coding, I am also an avid <span class="highlight">volleyball player</span>. Balancing both academics and athletics has taught me discipline, teamwork, and perseverance.  
+                    I believe that every challenge presents an opportunity to learn and grow, both on the court and in the world of programming.</p>
+        
+                    <p>My goal is to continue expanding my knowledge and contribute to projects that make a meaningful impact.  
+                    I am always eager to collaborate, innovate, and push the boundaries of what technology can achieve!</p>
+                </div>
+                <img src="marcus.jpg" class="autoImage"> 
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+x
